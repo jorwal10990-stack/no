@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Apology</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container message-container">
+        <div class="message-box" id="message-content">
+            </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const mood = urlParams.get('mood');
+        const messageContainer = document.getElementById('message-content');
+
+        const angryMessage = `
+            <p class="intro">🙆🏻 I’m sorry, my princess 😔♥️</p>
+            <p>I was just teasing you, because you’ll always be my favorite player, my little champ 🫡👶🏻.</p>
+            <p>Don’t be upset, anger doesn’t belong to such a cute soul like you 🌸.</p>
+            <p class="quote">“The strongest players aren’t the ones who never fall, but the ones who rise again with a smile.”</p>
+            <p>And you, my love, are the strongest of them all ♥️.</p>
+            <p>Now let me make it up to you—send me your address on WhatsApp and I’ll order you something delicious from Zomato 🍴✨.</p>
+            <p>Love you endlessly, my proest baby 🫡♥️.</p>
+        `;
+
+        const happyMessage = `
+            <p class="intro">That’s my princess! 🥰♥️</p>
+            <p>I'm so glad you're not angry. Your joy and smile mean the world to me, and seeing you happy is all I ever want.</p>
+            <p>You're not just a pro gamer, you're the greatest player in the game of life. I'm so lucky to have you, my love.</p>
+            <p class="quote">“Success is not final, but my love for you is forever.”</p>
+            <p>And you, my love, are the strongest of them all ♥️.</p>
+            <p>Now let me celebrate you—send me your address on WhatsApp and I’ll order you something delicious from Zomato 🍴✨.</p>
+            <p>Love you endlessly, my proest baby 🫡♥️.</p>
+        `;
+
+        if (mood === 'yes') {
+            messageContainer.innerHTML = angryMessage;
+        } else if (mood === 'no') {
+            messageContainer.innerHTML = happyMessage;
+        } else {
+            messageContainer.innerHTML = `<p>Error: Message not found.</p>`;
+        }
+    </script>
+
+</body>
+</html>
